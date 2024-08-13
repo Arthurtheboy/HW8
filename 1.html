@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="bruh">
+        <button type="submit">click</button>
+    </form>
+    <script>
+        const button = document.getElementById("bruh");
+
+        const api_url1=
+        "https://api.apify.com/v2/key-value-stores/ZsOpZgeg7dFS1rgfM/records/LATEST";
+
+        const api_url2=
+        "https://api.apify.com/v2/key-value-stores/p3nS2Q9TUn6kUOriJ/records/LATEST";
+
+        button.addEventListener("submit", click());
+        function click(e){
+            let dt = fetch(api_url1)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log("success:", data.detail);
+                });
+            console.log(dt);
+        }
+    </script>
+</body>
+</html>
